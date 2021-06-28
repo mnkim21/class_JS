@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            margin: 5px;
+        }
+    </style>
+    <script>
+        function info(zip, address1){
+            opener.document.all.zip.value = zip;
+            opener.document.all.address1.value = address1;
+            opener.document.all.address2.focus();
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        ex31_search.html
+        자식창
+        
+        https://pinnpublic.github.io/example/javascript/exam04.html
+     -->
+    <form>
+        <input type="button" value="서울시 강남구 역삼동" name="btn1" onclick="info('06232','서울시 강남구 역삼동');"><br>
+        <input type="button" value="서울시 강남구 대치동" name="btn2" onclick="info('06291','서울시 강남구 대치동');"><br>
+        <input type="button" value="서울시 강남구 도곡동" name="btn3" onclick="info('06267','서울시 강남구 도곡동');"><br>
+    </form>
+
+</body>
+</html>

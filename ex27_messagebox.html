@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex27_messagebox</title>
+</head>
+<body>
+    <!-- 
+        ex27_messagebox.html
+
+        메시지박스, Message Box = DialogBox
+        1. alert() ***
+            - 메시지 전달 + 확인 버튼
+        
+        2. confirm() ***
+            - 메시지 전달 + 확인, 취소 버튼
+
+        3. prompt() x
+            - 사용자에게 정보 입력
+            - 디자인 수정 불가
+     -->
+     <h1>Message Box</h1>
+
+     <form name="form1">
+         <input type="button" value="버튼1" name="btn1">
+         <input type="button" value="버튼2" name="btn2">
+         <input type="button" value="버튼3" name="btn3">
+     </form>
+
+     <script>
+         var btn1 = document.form1.btn1;
+         var btn2 = document.form1.btn2;
+         var btn3 = document.form1.btn3;
+
+         btn1.onclick = function() {
+             alert(100); // 숫자
+             alert(true); // Boolean
+             alert('문자열'); // 문자열
+             alert(new Date()); // 문자열
+         };
+
+         btn2.onclick = function() {
+            //  confirm('메시지');
+
+             var result = confirm('정말 삭제하겠습니까?');
+             console.log(result);
+             // 확인 : true/ 취소, esc: false
+
+             if (result = true) {
+
+             } else {
+
+             }
+         };
+
+         btn3.onclick = function() {
+            //  prompt('메시지', '초기값');
+             var age = prompt('나이를 입력하세요.', '');
+
+             if(age >= 19) {
+                 location.href = 'http://google.com';
+             } else {
+                 alert('미성년자 접근 불가');
+             }
+         };
+
+
+         /*
+            자바스크립트의 함수는 모두(100%) 객체 메소드이다.(귀속 함수)
+                : 자바스크립트는 독립 함수가 없다.
+                : 자바스트립트는 전역 함수가 없다.
+                : 자바스트립트는 전역 변수가 없다.
+
+                모든 전역 변수와 모든 전역 함수는 (자동으로) window객체의 프로퍼ㅣ가 된다.
+            
+         */
+
+         // 전역 변수
+         var num = 10;
+
+        //  alert(); // 함수
+        // window.alert();
+
+        //  function alert() {}; // 독립함수 -> 전역 함수
+
+         var obj = {
+             name: '홍길동',
+             age: 20,
+
+             //귀속함수 > 메소드
+             hello: function() {
+                console.log(this); // this == obj
+             }
+         };
+
+        //  hello(); //x
+         obj.hello(); //o
+
+         // 객체에 변수를 추가하면 -> 프로퍼티
+         obj.gender = '남자'; // 프로퍼티 추가
+
+         // 전역 변수 생성
+         var program = 'test';
+
+         // 아래와 같이 자동으로 처리
+         // window.program = 'test';
+
+         console.log(program);
+         console.log(window.program);
+
+         // 전역 함수 생성
+         function test(){
+             alert('hi~');
+         };
+
+         // 아래와 자동으로 추가
+         // window.test = function() {alert('hi~');};
+    
+         test();
+         window.test();
+
+
+         // 전역 함수에서 작성한 this는 항상 window 객체를 말한다.
+         function aaa() {
+             // this: 객체 자신 -> 해당 메소드를 소유하고 있는 것 
+             console.log(this); // this == window
+         };
+
+         aaa();
+         
+     </script>
+</body>
+</html>

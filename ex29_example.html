@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex29_example</title>
+</head>
+<body>
+    <!--
+        ex29_example.html 
+        https://pinnpublic.github.io/example/javascript/exam02.html
+     -->
+     
+         <img src="images/cat01.jpg" name="img1">
+         <img src="images/cat02.jpg" name="img2">
+         <img src="images/cat03.jpg" name="img3">
+         <img src="images/cat04.jpg" name="img4">
+         <img src="images/cat05.jpg" name="img5">
+     
+
+     <script>
+         var img1 = document.images.img1;
+         var img2 = document.images.img2;
+         var img3 = document.images.img3;
+         var img4 = document.images.img4;
+         var img5 = document.images.img5;
+
+         img1.onmouseover = function() {
+             img1.src = "images/dog01.jpg";
+         }
+         img1.onmouseout = function() {
+             img1.src = "images/cat01.jpg";
+         }
+
+         
+         img2.onmouseover = function() {
+             img2.src = "images/dog02.jpg";
+         }
+         img2.onmouseout = function() {
+             img2.src = "images/cat02.jpg";
+         }
+
+
+         img3.onmouseover = function() {
+             img3.src = "images/dog03.jpg";
+         }
+         img3.onmouseout = function() {
+             img3.src = "images/cat03.jpg";
+         }
+
+
+         img4.onmouseover = function() {
+             img4.src = "images/dog04.jpg";
+         }
+         img4.onmouseout = function() {
+             img4.src = "images/cat04.jpg";
+         }
+
+
+         img5.onmouseover = function() {
+             img5.src = "images/dog05.jpg";
+         }
+         img5.onmouseout = function() {
+             img5.src = "images/cat05.jpg";
+         }
+
+     </script>
+</body>
+</html>

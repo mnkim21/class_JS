@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex31_example</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 600px;
+            font-size: 1em;
+            color: #444;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .menu {
+            text-align: center;
+            background-color: #DEDEDE;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex31_example.html
+
+        https://pinnpublic.github.io/example/javascript/exam04.html
+     -->
+     <h1>우편 번호 검색</h1>
+     <table>
+         <tr>
+             <td class="menu">우편번호</td>
+             <td><input typt="text" name="zip"> <input type="button" value="우편번호검사하기" name="btn1"></td>
+         </tr>
+         <tr>
+             <td class="menu">주소</td>
+             <td><input type="text" name="address1"></td>
+         </tr>
+         <tr>
+             <td class="menu">상세주소</td>
+             <td><input type="text" name="address2"></td>
+         </tr>
+     </table>
+
+     <script>
+         var btn1 = document.all.btn1;
+
+         var zip = document.all.zip;
+         var address1 = document.all.address1;
+         var address2 = document.all.address2;
+
+         btn1.onclick = function(){
+             child = window.open('ex31_search.html', 'search', 'width=350, height=200');
+         }
+     </script>
+</body>
+</html>

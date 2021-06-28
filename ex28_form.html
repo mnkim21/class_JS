@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex28_form</title>
+    <style>
+        body {
+            margin-bottom: 500px;
+        }
+
+        #tbl1 {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        #tbl1 th, #tbl td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex28_form.html
+
+        BOM
+        - window
+        - screen, history, location, document
+        - image, link, form
+        - text, button, radio, checkbox
+     -->
+
+     <h1>폼</h1>
+
+     <form name='form1'>
+
+        <h2>텍스트박스</h2>
+         <input type="text" name="txt1">
+         <input type="button" value="버튼" name="btn1">
+
+         <hr>
+         <h2>로그인</h2>
+         아이디: <input type="text" name="txtID"><br>
+         비밀번호: <input type="password" name="txtPW"><br>
+         <input type="button" value="로그인" name="btnLogin">
+
+         <hr>
+         <h2>체크박스</h2>
+         <label>동의: <input type="checkbox" name="cb1"></label>
+         <input type="button" value="확인" name="btn2">
+
+         <hr>
+         <h2>약관</h2>
+         <fieldset>어쩌구 저쩌구 이러쿵 저러쿵</fieldset>
+         <label>약관동의: <input type="checkbox" name="cb2"></label>
+         <input type="button" value="다음 단계로" name="btn3" disabled>
+
+         <hr>
+         <h2>게시물</h2>
+         <table id="tbl1">
+             <tr>
+                 <th><input type="checkbox" name="cbAll"></th>
+                 <th>제목</th>
+                 <th>작성자</th>
+                 <th>날짜</th>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+             <tr>
+                 <td><input type="checkbox" name="cbItem"></td>
+                 <td>Lorem ipsum dolor sit amet.</td>
+                 <td>홍길동</td>
+                 <td>2021-06-25</td>
+             </tr>
+         </table>
+
+         <hr>
+         <h2>라디오 버튼</h2>
+
+         <div>
+             <h3>선호하는 언어를 선택하세요.</h3>
+             <label><input type="radio" name="rb" value="Java">Java</label><br>
+             <label><input type="radio" name="rb" value="SQL">SQL</label><br>
+             <label><input type="radio" name="rb" value="HTML">HTML</label><br>
+             <label><input type="radio" name="rb" value="CSS">CSS</label><br>
+             <label><input type="radio" name="rb" value="JavaScript">JavaScript</label><br>
+             <br>
+             <input type="button" value="확인" name="btn4">
+         </div>
+
+         <div>
+             <h3>배경색을 선택하세요.</h3>
+             <label><input type="radio" name="rbColor" value="tomato">빨강</label><br>
+             <label><input type="radio" name="rbColor" value="yellow">노랑</label><br>
+             <label><input type="radio" name="rbColor" value="green">초록</label><br>
+             <label><input type="radio" name="rbColor" value="blue">파랑</label><br>
+             <label><input type="radio" name="rbColor" value="white" checked>하얀</label><br>
+         </div>
+
+         <hr>
+         <h2>셀렉트 박스</h2>
+
+         <div>
+             <label>동물: </label>
+             <select name="sel1" multiple size="7">
+                  <!-- option에서 value는 숫자로 주고 primary key로 사용하는게 보편적이다. -->
+                 <option value="1">힌둥이</option>
+                 <option value="2">딸기</option>
+                 <option value="3">뚱띵이</option>
+                 <option value="4">딩딩이</option>
+                 <option value="5">호두</option>
+             </select>
+             <br><br>
+             <input type="button" value="확인5" name="btn5">
+             <input type="button" value="확인6" name="btn6">
+             <input type="button" value="확인7" name="btn7">
+             <input type="button" value="확인8" name="btn8">
+             <input type="button" value="확인9" name="btn9">
+         </div>
+
+     </form>
+
+     <script>
+         var txt1 = document.form1.txt1;
+         var btn1 = document.form1.btn1;
+
+         var txtID = document.form1.txtID;
+         var txtPW = document.form1.txtPW;
+         var btnLogin = document.form1.btnLogin;
+
+         var btn2 = document.form1.btn2;
+         var cb1 = document.form1.cb1;
+
+         var btn3 = document.form1.btn3;
+         var cb2 = document.form1.cb2;
+
+         var cbAll = document.form1.cbAll; // 단수
+         var cbItem = document.form1.cbItem; // 복수 -> 배열
+
+         var btn4 = document.form1.btn4;
+         var rb = document.form1.rb; // 복수 -> 배열
+
+         var rbColor = document.form1.rbColor; // 복수 -> 배열
+
+         var sel1 = document.form1.sel1;
+         var btn5 = document.form1.btn5;
+         var btn6 = document.form1.btn6;
+         var btn7 = document.form1.btn7;
+         var btn8 = document.form1.btn8;
+         var btn9 = document.form1.btn9;
+
+
+         /*
+            텍스트 박스 조작
+            1. 텍스트 박스 자체
+            2. 텍스트 박스의 값 -> 문자열 조작*****
+         */
+         btn1.onclick = function() {
+             txt1.readOnly = true;
+             txt1.value;
+         };
+
+         btnLogin.onclick = function() {
+             /*
+                유효성 검사
+                - 유효성 검사는 되도록 유효하지 않은 걸 찾아야 로직 구현이 편하다.
+                1. 아이디: 필수입력, 4~12자 이내
+                2. 비밀번호: 필수입력, 4~12자 이내
+             */
+
+             if(txtID.value.trim() == ''){
+                 alert('아이디를 반드시 입력하세요.');
+                 txtID.focus(); // onfocus
+                 return; // 함수종료
+             }
+
+             if(txtID.value.trim().length < 4 || txtID.value.trim().length > 12){
+                 alert('아이디를 4~12자 이내로 입력하세요.');
+                //  txtID.focus(); // txtID로 커서만 이동
+                 txtID.select(); // txtID에 입력된 값 블럭설정됨
+                 return;
+             }
+
+             if(txtPW.value.trim() == ''){
+                 alert('비밀번호를 반드시 입력하세요.');
+                 txtPW.focus();
+                 return;
+             }
+
+             if(txtPW.value.trim().length < 4 || txtPW.value.trim().length > 12){
+                 alert('비밀번호를 4~12자 이내로 입력하세요.');
+                //  txtPW.focus();
+                 txtPW.select();
+                 return;
+             }
+
+             // 모든 유효성 검사 통과 -> 올바른 데이터 입력 -> 전송
+             alert('success');
+         };
+
+         btn2.onclick = function() {
+             // 체크박스의 상태?
+             alert(cb1.checked); //checked: true, unchecked: false
+         }
+
+
+         /*
+            체크박스를 클릭해서 체크 상태를 변화할 때 사용하는 이벤트
+            1. onclick
+            2. onchange -- 권장
+         */
+
+         cb2.onchange = function() {
+            //  alert(cb2.checked);
+             if (cb2.checked) {
+                 btn3.disabled = false;
+             } else {
+                 btn3.disabled = true;
+             }
+         };
+
+         btn3.onclick = function() {
+             location.href = 'http://google.com';
+         };
+
+         cbAll.onchange = function() {
+
+            // 방법1
+            //  if(cbAll.checked) {
+            //      for(var i = 0; i < cbItem.length; i++){
+            //          cbItem[i].checked = true;
+            //      }
+            //  } else {
+            //      for(var i = 0; i < cbItem.length; i++){
+            //          cbItem[i].checked = false;
+            //      }
+            //  }
+
+            // 방법2
+             for(var i = 0; i < cbItem.length; i++){
+                 cbItem[i].checked = cbAll.checked;
+             }
+         };
+
+         btn4.onclick = function() {
+             rb.forEach(function(item, index) {
+                // alert(item.checked);
+                // alert(item.value);
+
+                if(item.checked) {
+                    alert(item.value);
+                }
+             });
+         };
+
+         rbColor.forEach(function(rb, index){
+             rb.onclick = function() {
+                // alert();
+                // alert(rb.value);
+                // alert(event.srcElement.value); // 권장
+
+                document.body.bgColor = event.srcElement.value;
+             };
+         });
+
+         btn5.onclick = function(){
+            //  선택한 <option>접근
+            //  alert(sel1.value); // select-option의 value 값 나옴 -> 읽기
+             sel1.value=4; // 쓰기
+         };
+
+         btn6.onclick = function(){
+
+            //  선택항목(<option>)
+            //  - <option>태그의 index
+            //  alert(sel1.selectedIndex); // 선택된 option의 index(0부터 시작함.)
+             sel1.selectedIndex = 2;
+
+            //  셀렉트 박스 > 선택 항목 조작
+            //  1.  value
+            //  2. selectedIndexd
+         };
+
+         btn7.onclick = function(){
+
+            //  var flag = false;
+
+             for(var i = 0; i < sel1.options.length; i++) {
+                 if(sel1.options[i].text =='햄스터'){
+                    //  flag = true;
+                    //  break;
+                    return;
+                 }
+             }
+
+            //  if(!flag){
+                 //  <option> 동적 추가
+                 var op = new Option(); // <option> 태그 생성
+                 op.value = 6; // <option value="6"></option>
+                 op.text = '햄스터'; // <option value="6">햄스터</option>
+                 //  --> 여기까지하면 화면에는 안보임. 그러나 메모리상 어딘가에는 6.햄스터가 추가되어있음.
+
+                 // <select>에 <option> 추가
+                 sel1.options.add(op);
+                 // --> 여기까지만 하면 확인7버튼을 누를 때 마다 햄스터가 option에 추가됨. 따라서 flag이용해서 for문 만들기.
+            //  }
+         };
+
+         btn8.onclick = function(){
+
+            //  <option> 삭제
+            //  sel1.options.remove(0);
+
+            if (sel1.options.length > 1) {
+
+            // sel1.options.remove(선택한 옵션의 index);
+            sel1.options.remove(sel1.selectedIndex);
+            }
+
+         };
+
+         btn9.onclick = function(){
+             // 다중 선택 > 선택한 항목?
+             for(var i = 0; i < sel1.options.length; i++) {
+                //  alert(sel1.options[i].selected); //cb, rb 는 checked/ select box: selected
+
+                if(sel1.options[i].selected){
+                    alert(sel1.options[i].text+ ':' + sel1.options[i].value);
+                }
+
+             }
+         };
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex30_example</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        table td { 
+            border: 1px solid black;
+        }
+
+        table td input {
+            display: block;
+            margin: 10px auto;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #pic {
+            width: 430px;
+            padding-left: 50px;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <!-- 
+        ex30_example.html
+
+        https://pinnpublic.github.io/example/javascript/exam03.html
+     -->
+     <table>
+         <tr>
+             <td id="menu">
+                 <input type="button" value="강아지1" name="dog1">
+                 <input type="button" value="강아지2" name="dog2">
+                 <input type="button" value="강아지3" name="dog3">
+                 <input type="button" value="강아지4" name="dog4">
+                 <input type="button" value="강아지5" name="dog5">
+             </td>
+             <td id="pic"><img src="images/dog01.jpg" name="pic"></td>
+         </tr>
+     </table>
+     <script>
+        var dog1 = document.all.dog1;
+        var dog2 = document.all.dog2;
+        var dog3 = document.all.dog3;
+        var dog4 = document.all.dog4;
+        var dog5 = document.all.dog5;
+
+        var pic = document.images['pic'];
+
+
+        dog1.onmouseover = function() {
+            pic.src = "images/dog01.jpg";
+        }
+        dog2.onmouseover = function() {
+            pic.src = "images/dog02.jpg";
+        }
+        dog3.onmouseover = function() {
+            pic.src = "images/dog03.jpg";
+        }
+        dog4.onmouseover = function() {
+            pic.src = "images/dog04.jpg";
+        }
+        dog5.onmouseover = function() {
+            pic.src = "images/dog05.jpg";
+        }
+
+
+        dog1.onclick = function(){
+            child=window.open('images/dog01_big.jpg', 'a', '');
+        }
+        dog2.onclick = function(){
+            child=window.open('images/dog02_big.jpg', 'a', '');
+        }
+        dog3.onclick = function(){
+            child=window.open('images/dog03_big.jpg', 'a', '');
+        }
+        dog4.onclick = function(){
+            child=window.open('images/dog04_big.jpg', 'a', '');
+        }
+        dog5.onclick = function(){
+            child=window.open('images/dog05_big.jpg', 'a', '');
+        }
+
+    </script>
+</body>
+</html>
