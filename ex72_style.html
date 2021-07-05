@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex72_style</title>
+    <style>
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: gold;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex72_style.html
+     -->
+    <h1>Drag & Drop</h1>
+
+    <div id="box"></div>
+
+    <script>
+        var box = document.getElementById('box');
+        var isDown = false;
+        var x, y;
+        
+        window.onmousedown = function() {
+            if(event.srcElement.id == 'box'){
+                isDown = true;
+
+                x = event.offsetX;
+                y = event.offsetY;
+            }
+           
+        };
+        
+        window.onmouseup = function() {
+            isDown = false;
+        };
+        
+        window.onmousemove = function() {
+            if(isDown) {
+                box.style.left = event.clientX - x + 'px';
+                box.style.top = event.clientY -y  + 'px';
+            }
+
+        };
+
+
+    </script>
+</body>
+</html>

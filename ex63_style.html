@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex63_style</title>
+    <style>
+        /* 임베디드 스타일 시트 */
+        #box {
+            border: 10px solid black;
+            width: 200px;
+            height: 200px;
+            background-color: goldenrod;
+            margin: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex63_style.html
+     -->
+    <h1>JavaScript + CSS</h1>
+    <input type="button" value="확인" id="btn1">
+    <hr>
+    <!-- 인라인 스타일 시트 -->
+    <!-- <div id="box" style="font-size: 2em; width: 200px;">상자</div> -->
+    <div id="box" style="font-size: 2em;">상자</div>
+
+    <script>
+        /*
+            JavaScript Mode
+            - transitional(o): 오류 허용 -> 무시
+            - strict(x): 엄격한 문법 준수
+            - frame(x)
+        */
+        //ES6
+        // 'use strict'
+
+        // a is not defined
+        // a= 10;
+        // alert(a);
+
+
+        var btn1 = document.getElementById('btn1');
+        var box = document.getElementById('box');
+
+        btn1.onclick = function() {
+            
+            /*
+                JavaScript에서 CSS조작 규칙
+                1. style 프로퍼티 사용(collection)
+                2. 태그.style.CSS속성명 = CSS속성값
+                    - CSS: <div id="box" style="color:red;">
+                    - JS: box.style.color = "red";
+                3. 대부분의 속성명은 그대로 사용
+                    - CSS: background-color
+                    - JS: backgroundColor (캐멀 표기법으로 수정/ JS에서 -는 마이너스로 인식)
+                4. 속성값 > 숫자를 제외하고, 대부분 문자열 -> 따옴표로 묶어준다.
+                5. JavaScript를 통해 접근한 CSS의 속성 상태는 인라인 스타일 시트로 선언한 값만 접근이 가능하다.(임베디디, 외부 > 접근 불가능)
+            */
+
+            // box -> CSS 조작
+            // box.style.width = '400px';
+            // box.style.height = "600px";
+            // box.style.backgroundColor = 'cornflowerblue';
+            // box.style.['background-color'] = 'blue';
+
+            // alert(box.style.width); // null
+            // alert(box.style.fontSize); // 2em
+
+            // alert(box.style.width);
+
+            // console.log(parseInt(box.style.width));
+            // console.log(parseInt(box.style.width) * 1.5);
+            // box.style.width = parseInt(box.style.width) * 1.5 + 'px';
+
+            console.log(window.getComputedStyle(box).width);
+
+            
+
+
+            // Vanilla JavaScript: 지금 수업 내용
+        };
+
+    </script>
+</body>
+</html>

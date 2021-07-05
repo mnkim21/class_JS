@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex83_example</title>
+    <style>
+        #cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex83_example.html
+
+        https://pinnpublic.github.io/example/javascript/exam30.html
+    -->
+    <img src="images/catty01.png" id="cat">
+
+    <script>
+        var cat = document.getElementById('cat');
+
+        window.onmousedown = function(){
+            cat.style.left = (event.clientX - 60) + 'px';
+            cat.style.top = (event.clientY - 62) + 'px';
+        };
+    </script>
+
+</body>
+</html>

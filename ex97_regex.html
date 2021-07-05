@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex97_regex</title>
+</head>
+<body>
+    <!-- 
+        ex97_regex.html
+        
+        JavaScript 정규표현식
+    -->
+
+    <textarea id="txt" cols="80" rows="10">
+        (대전=연합뉴스) 박주영 기자 = 신종 코로나바이러스 감염증(코로나19)을 일으키는 '사스 코로나바이러스-2'(SARS-CoV-2·코로나19 바이러스)의 초기 감염 기전이 처음으로 밝혀졌다.
+
+        기초과학연구원(IBS) 혈관 연구단 고규영 단장과 전북대 감염내과 이창섭 교수 연구팀은 코로나19 바이러스의 복제 순간을 처음으로 포착, 초기 감염의 주요 표적이 비강(코안) 섬모 상피세포임을 확인했다고 2일 밝혔다.
+
+
+        비강 섬모세포 끝부분에 다량 존재하는 코로나19 바이러스 ACE2수용체
+        [기초과학연구원 제공. 재판매 및 DB 금지]
+
+
+        코로나19가 발병한 지 1년 6개월 넘게 지났지만, 인체 감염 기전은 여전히 불분명하다.
+
+        상기도 조직인 비강이나 인두, 후두, 기관지 등을 통해 감염된다고 알려졌을 뿐 정확한 표적 부위는 밝혀지지 않았다.
+
+        코로나19 바이러스는 숙주세포의 ACE2 수용체 단백질 등을 이용해 세포 내로 침투하는데 기존 분석법으로는 010-1234-5678단백질의 정확한 분포를 파악하기 힘들었다.
+
+        코로나19 환자 대부분이 진단 시점에 이미 일차 바이러스 감염이 끝난 상태라 초기 감염 기전을 파악하는 데 어려움이 있었다.
+
+        연구팀은 코로나19 초기 경증 환자로부터 얻은 검체를 면역형광염색과 최신 단일세포 유전자발현 측정 기법을 이용해 분석, ACE2 수용체 단백질이 코안 섬모세포의 가장 끝부분인 공기와 맞닿은 부분에 집중적으로 분포함을 확인했다.
+
+        코로나19 바이러스가 섬모세포의 공기 접촉면에 결합해 세포 내로 침투한 뒤 증식한다는 뜻이다.
+
+        이로써 비강 섬모세포가 코로나바이러스 감염의 시발점임을 새롭게 밝혔다.
+
+        연구팀은 코로나19 초기 환자의 비강·구강세포를 분석한 결과 코로나19 바이러스가 비강 섬모세포에서만 복제·증식함을 처음으로 확인했다.
+
+        010-1234-5679
+
+        코로나19 바이러스의 비강 섬모세포 감염 기전
+        [기초과학연구원 제공. 재판매 및 DB 금지]
+
+        ACE2 수용체 단백질이 없는 비강 분비세포나 구강 상피세포에서는 감염이 일어나지 않았다.
+
+        고규영 단장은 "경증 환자는 코로나19 바이러스 증식이 8일 안에 끝났으며, 손상된 섬모세포가 빠르게 재생되는 모습을 보였다"며 "이는 비강 점막 면역이 코로나19 치료의 핵심이라는 뜻"이라고 말했다.
+
+        이어 "비강 내 백신을 투여해 점막 면역을 형성하는 것이 새로운 코로나19 예방·치료 전략이 될 것"이라고 제안했다.
+
+        이번 연구 결과는 권위 있는 국제 학술지 '임상연구저널'(Journal of Clinical Investigation) 이날 자 표지 논문으로 실렸다.
+    </textarea>
+
+    <input type="button" value="버튼" id="btn1">
+
+    <h1>입력</h1>
+
+    <form method="GET" action="ex97.jsp">
+        <div>이름: <input type="text" name="name" pattern="[가-힣]{2,5}" required>필수+한글(2~5자)</div>
+        <div>나이: <input type="text" name="age" pattern="[0-9]{1,2}" required>필수+숫자</div>
+        <div>나이: <input type="number" name="age">필수+숫자</div>
+        <div><input type="submit" value="등록하기"></div>
+    </form>
+
+    <script>
+        var txt = document.getElementById('txt');
+        var btn1 = document.getElementById('btn1');
+
+        btn1.onclick = function() {
+
+            /*
+            
+            정규표현식
+
+            1. 생성자 함수 사용
+            2. 리터럴 표기법 사용
+
+            정규 표현식 객체 메소드
+            1. boolean test()
+            2. array exec()
+            3. array match()
+            4. string replace()
+            5. array split()
+
+            */
+
+            // 1. 생성자 함수
+            // g : global, 전역 탐색(N회 탐색) -> 없으면 가장 처음 값만 찾고 더이상 탐색 안함
+            // var regex = new RegExp('[0-9]{3}-[0-9]{3,4}-[0-9]{4}', 'g');
+            var regex = /[0-9]{3}-[0-9]{3,4}-[0-9]{4}/g;
+
+            console.log('test: '+ regex.test(txt.value)); // true
+        
+
+            // (괄호) 부분만 추출
+            // var regex = /([0-9]{3})-([0-9]{3,4})-[0-9]{4}/g;
+            // console.log(regex.exec(txt.value));
+            // var result = regex.exec(txt.value);
+            // console.log(result.length);
+            // result.forEach(function(item) {
+            //     console.log(item);
+            // });
+
+
+            var result = txt.value.match(regex);
+            console.log(result.length);
+
+            result.forEach(function(item) {
+                console.log(item);
+            });
+        };
+
+        var str = '홍길동님 안녕하세요. 반갑습니다. 홍길동님';
+
+        console.log(str.replace('홍길동', '아무개'));
+        console.log(str.replace(/홍길동/g, '아무개'));
+
+
+        var str = 'Hello Java~ Hi java';
+
+        console.log(str.replace(/Java/g, '자바')); // 대소문자 때문에 첫번째밖에 못 찾음
+
+        // i: insensitive, 대소문자 무시
+        console.log(str.replace(/Java/gi, '자바'));
+        console.log(str.replace(/Java/ig, '자바')); // 옵션의 순서는 상관없다.
+
+
+        // var str = '홍길동,아무개;하하하@호호호, 후후후';
+        var str = '홍길동,아무개 ,하하하,호호호,  후후후';
+
+        console.log(str.split(','));
+        console.log(str.split(/[,;@]/));
+        console.log(str.split(/\s?,\s?/)); // \s: 공백, ?: 0 또는 1
+        console.log(str.split(/\s*,\s*/));  // *: 0 또는 무한대
+    </script>
+</body>
+</html>

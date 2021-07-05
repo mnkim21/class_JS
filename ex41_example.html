@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex41_example</title>
+    <style>
+        .num {
+            border: 0;
+            font-size: 10em;
+            font-weight: bold;
+            text-align: center;
+            width: 250px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex41_example.html
+     -->
+     <div>
+         <input type="text" name="num" class="num" value="10">
+     </div>
+     <script>
+        var n = 10;
+
+        var timer = setInterval(function() {
+            n--;
+            document.all.num.value = n;
+
+            if(n == 0) {
+                clearInterval(timer)
+                location.href = "http://google.com";
+            }
+        }, 1000);
+
+        window.onkeydown = function() {
+            if(event.keyCode == 27) { // esc키
+                clearInterval(timer);
+                document.body.bgColor = "tomato";
+            }
+        };
+     </script>
+</body>
+</html>

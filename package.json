@@ -1,0 +1,26 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "main": "ex04.js",
+  "dependencies": {
+    "bootstrap": "^3.4.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "eslint-plugin-html": "^6.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnkimm/client_03.JavaScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnkimm/client_03.JavaScript/issues"
+  },
+  "homepage": "https://github.com/mnkimm/client_03.JavaScript#readme",
+  "description": ""
+}

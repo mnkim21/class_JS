@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex87_example</title>
+    <style>
+        body {
+            background-color: #444;
+        }
+        #box {
+            width: 1000px;
+            height: 700px;
+            border: 10px solid black;
+            margin: 50px auto;
+            background-color: white;
+            overflow: hidden;
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+        .cat {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex87_example.html
+    -->
+    <div id="box">
+        <img src="images/catty01.png" class="cat">
+        <img src="images/catty02.png" class="cat">
+        <img src="images/catty03.png" class="cat">
+        <img src="images/catty04.png" class="cat">
+        <img src="images/catty05.png" class="cat">
+        <img src="images/catty06.png" class="cat">
+        <img src="images/catty07.png" class="cat">
+        <img src="images/catty08.png" class="cat">
+        <img src="images/catty09.png" class="cat">
+        <img src="images/catty10.png" class="cat">
+        <img src="images/catty11.png" class="cat">
+        <img src="images/catty12.png" class="cat">
+        <img src="images/catty13.png" class="cat">
+        <img src="images/catty14.png" class="cat">
+        <img src="images/catty15.png" class="cat">
+        <img src="images/catty16.png" class="cat">
+        <img src="images/catty17.png" class="cat">
+        <img src="images/catty18.png" class="cat">
+        <img src="images/catty19.png" class="cat">
+        <img src="images/catty20.png" class="cat">
+        <img src="images/catty21.png" class="cat">
+    </div>
+
+    <script>
+        var cat = document.getElementsByClassName('cat');
+        var box = document.getElementById('box');
+
+        var pathX = [];
+        var pathY = [];
+
+        for(var i = 0; i < cat.length; i++) {
+            cat[i].style.zIndex = (cat.length - i);
+        }
+
+        box.onmousemove = function() {
+            pathX.push(event.clientX);
+            pathY.push(event.clientY);
+
+            if(pathX.length > cat.length){
+                pathX.shift();
+                pathY.shift();
+            }
+
+            for(var i = 0; i < cat.length; i++){
+                cat[i].style.left = pathX[i] + 'px';
+                cat[i].style.top = pathY[i] + 'px';
+                cat[i].style.display = 'block';
+            }
+        };
+    </script>
+</body>
+</html>

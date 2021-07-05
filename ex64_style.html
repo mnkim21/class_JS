@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex64_style</title>
+</head>
+<body>
+    <!-- 
+        ex64_style.html
+     -->
+
+     <h1>뉴스</h1>
+     <fieldset>
+        <button type="button" id="big">크게</button>
+        <button type="button" id="small">작게</button>
+     </fieldset>
+     <p id="content">
+        삼양식품은 신제품 ‘짜장이라구요’를 출시한다고 밝혔다.
+
+        짜장이라구요는 야채, 고기 등을 오랜 시간 끓여 만드는 유럽 요리인 ‘라구(Ragù)’를 모티브로 한 제품이다. 진한 짜장에 담백한 채소의 맛이 스며들어 있어 질리지 않는 부드러운 짜장의 풍미를 느낄 수 있다.
+
+        또한 이중복합면을 사용해 면을 차별화했다. 면 성형과정에서 서로 다른 굵기의 면을 동시에 뽑아 교차시키는 삼양식품만의 수타식 제면 공법을 적용해 만든 이중복합면은 두꺼운 면과 얇은 면이 섞여 있어 수타면 특유의 균일하지 않은 면발을 연상시키며, 쫄깃한 식감을 선사한다.
+
+        짜장이라구요는 전국 유통 채널에서 구입할 수 있다.
+
+        삼양식품은 이번 신제품을 통해 꾸준히 확대되고 있는 국내 짜장라면시장을 적극 공략한다는 계획이다. 실제 국내 짜장라면시장 규모는 2018년 2000억원에서 2020년 3000억원으로 빠르게 성장 중이다. 삼양식품은 장수제품인 짜짜로니 중심의 기존 짜장라면 제품 라인업을 다양화해 내수 매출과 점유율 확대에 나설 방침이다.
+
+        삼양식품 관계자는 “짜장이라구요는 수타식 제면 공법과 라구 스타일로 이색적인 매력을 더한 짜장라면”이라며 “짜장이라구요, 짜짜로니를 앞세워 국내 짜장라면 시장에서 고객층을 확대해 입지를 강화할 것”이라고 말했다.
+     </p>
+     <script>
+        var big = document.getElementById('big');
+        var small = document.getElementById('small');
+        var content = document.getElementById('content');
+
+        big.onclick = function() {
+            // 현재 크기?
+            // alert(window.getComputedStyle(content).fontSize); // 16px
+            
+            var fontSize = parseInt(window.getComputedStyle(content).fontSize);
+            fontSize += 2;
+
+            content.style.fontSize = fontSize + 'px';
+        };
+
+        small.onclick = function() {
+            var fontSize = parseInt(window.getComputedStyle(content).fontSize);
+            fontSize -= 2;
+            content.style.fontSize = fontSize + 'px';
+        };
+     </script>
+</body>
+</html>

@@ -7,8 +7,15 @@
     <title>ex32_example</title>
     <style>
         table {
-            border: 1px solid black;
             width: 600px;
+            border-collapse: collapse;
+            font-size: 1em;
+            color: #444;
+        }
+        #first {
+            border: 1px solid #DEDEDE;
+            padding: 5px;
+
         }
     </style>
 </head>
@@ -19,17 +26,21 @@
         https://pinnpublic.github.io/example/javascript/exam05.html
      -->
      <table>
-         <tr>
-             <td><img src="images/img01.jpg"></td>
-             <td><img src="images/img02.jpg"></td>
-             <td><img src="images/img03.jpg"></td>
+         <tr id="first">
+             <td><img src="images/img01.jpg" name="pic"></td>
+             <td><img src="images/img02.jpg" name="pic"></td>
+             <td><img src="images/img03.jpg" name="pic"></td>
          </tr>
          <tr>
              <td>test</td>
          </tr>
      </table>
      <script>
-         var img = document.all.img 
+         var pic = document.images['pic'];
+
+         pic.onmouseover = function() {
+             
+         }
      </script>
 </body>
 </html>

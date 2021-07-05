@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex85_example</title>
+    <style>
+        #cat {
+            position: absolute;
+            left: 10px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex85_example.html
+    -->
+    <input type="button" value="시작" id="btn">
+    <img src="images/catty01.png" id="cat">
+
+    <script>
+        var btn = document.getElementById('btn');
+        var cat = document.getElementById('cat');
+
+        var pathX = [];
+        var pathY = [];
+        var timer = 0;
+
+        // 동선 기억하기: 배열.push
+        window.onmousemove = function() {
+
+            if(event.ctrlKey){
+                pathX.push(event.clientX - 60);
+                pathY.push(event.clientY - 62);
+            }
+        };
+
+        btn.onclick = function() {
+
+            timer = setInterval(function() {
+
+                cat.style.left = pathX[0] + 'px';
+                cat.style.top = pathY[0] + 'px';
+
+                pathX.shift();
+                pathY.shift();
+
+                if (pathX.length == 0) {
+                    clearInterval(timer);
+                }
+            }, 30);
+        
+        };
+
+    </script>
+</body>
+</html>

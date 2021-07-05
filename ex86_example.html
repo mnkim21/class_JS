@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex86_example</title>
+    <style>
+        .cat {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        ex86_example.html
+    -->
+    <img src="images/catty01.png" class="cat">
+    <img src="images/catty02.png" class="cat">
+    <img src="images/catty03.png" class="cat">
+    <img src="images/catty04.png" class="cat">
+    <img src="images/catty05.png" class="cat">
+    <img src="images/catty06.png" class="cat">
+    <img src="images/catty07.png" class="cat">
+    <img src="images/catty08.png" class="cat">
+    <img src="images/catty09.png" class="cat">
+    <img src="images/catty10.png" class="cat">
+    <img src="images/catty11.png" class="cat">
+    <img src="images/catty12.png" class="cat">
+    <img src="images/catty13.png" class="cat">
+    <img src="images/catty14.png" class="cat">
+    <img src="images/catty15.png" class="cat">
+    <img src="images/catty16.png" class="cat">
+    <img src="images/catty17.png" class="cat">
+    <img src="images/catty18.png" class="cat">
+    <img src="images/catty19.png" class="cat">
+    <img src="images/catty20.png" class="cat">
+    <img src="images/catty21.png" class="cat">
+
+    <script>
+        var cat = document.getElementsByClassName('cat');
+
+        var pathX = [];
+        var pathY = [];
+
+        for(var i = 0; i < cat.length; i++){
+            cat[i].style.zIndex = (cat.length - i); // catty01이 가장 위에 있음.
+        }
+
+        window.onmousemove = function() {
+            pathX.push(event.clientX);
+            pathY.push(event.clientY);
+
+            // 고양이가 마우스 따라오는 거임 -> 즉, 고양이 수보다 배열의 길이가 길때 따라오는 것처럼 보이는 것임
+            if(pathX.length > cat.length){
+                pathX.shift();
+                pathY.shift();
+            }
+
+            for(var i = 0; i < cat.length; i++) {
+                cat[i].style.left = pathX[i] + 'px';
+                cat[i].style.top = pathY[i] + 'px';              
+            }
+        };
+    </script>
+    
+</body>
+</html>
